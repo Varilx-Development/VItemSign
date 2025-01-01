@@ -6,8 +6,10 @@ import de.varilx.command.registry.VaxCommandRegistry;
 import de.varilx.utils.language.LanguageUtils;
 import de.varilx.vItemsign.command.ItemSignCommand;
 import de.varilx.vItemsign.controller.ItemSignController;
-import de.varilx.vItemsign.hook.hooks.LuckPermsHook;
-import de.varilx.vItemsign.hook.hooks.WorldGuardHook;
+import de.varilx.vItemsign.controller.WorldGuardController;
+import de.varilx.vItemsign.hook.LuckPermsHook;
+import de.varilx.vItemsign.hook.WorldGuardHook;
+import de.varilx.vItemsign.listener.ItemSignListener;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -21,6 +23,7 @@ public final class VItemSign extends JavaPlugin {
     WorldGuardHook worldGuardHook;
 
     ItemSignController itemSignController;
+    WorldGuardController worldGuardController;
 
     @Override
     public void onEnable() {
@@ -37,6 +40,7 @@ public final class VItemSign extends JavaPlugin {
     }
 
     private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new ItemSignListener(this), this);
     }
 
     private void registerCommands() {
@@ -46,6 +50,7 @@ public final class VItemSign extends JavaPlugin {
 
     private void initializeController() {
         itemSignController = new ItemSignController();
+        worldGuardController = new WorldGuardController(this);
     }
 
     private void checkNBT() {
@@ -58,12 +63,8 @@ public final class VItemSign extends JavaPlugin {
         luckPermsHook = new LuckPermsHook(this, "LuckPerms");
         luckPermsHook.check();
 
-        System.out.println(worldGuardHook.isEnabled());
-
         worldGuardHook = new WorldGuardHook(this, "WorldGuard");
         worldGuardHook.check();
-
-        System.out.println(worldGuardHook.isEnabled());
 
     }
 
