@@ -1,5 +1,6 @@
 language: de
 
+# These items should remain in the list to avoid duplication bugs
 BlockedItems:
   - "SHULKER_BOX"
   - "WHITE_SHULKER_BOX"
