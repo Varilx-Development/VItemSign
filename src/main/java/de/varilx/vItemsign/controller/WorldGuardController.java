@@ -5,7 +5,6 @@ import com.sk89q.worldedit.bukkit.BukkitWorld;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import com.sk89q.worldguard.protection.regions.RegionContainer;
 import de.varilx.vItemsign.VItemSign;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -24,17 +23,14 @@ import java.util.Objects;
 public class WorldGuardController {
 
     VItemSign plugin;
-    RegionContainer regionContainer;
 
     public WorldGuardController(VItemSign plugin) {
         this.plugin = plugin;
-        if(!plugin.getWorldGuardHook().isEnabled()) return;
-        this.regionContainer = plugin.getWorldGuardHook().getHookedPlugin().getPlatform().getRegionContainer();
     }
 
     public boolean isWorldGuardRegion(Location location) {
         if(!plugin.getWorldGuardHook().isEnabled()) return false;
-        ApplicableRegionSet set = Objects.requireNonNull(WorldGuard.getInstance().getPlatform().getRegionContainer()
+        ApplicableRegionSet set = Objects.requireNonNull(plugin.getWorldGuardHook().getHookedPlugin().getPlatform().getRegionContainer()
                         .get(new BukkitWorld(location.getWorld())))
                 .getApplicableRegions(BlockVector3.at(location.getX(),location.getY(),location.getZ()));
         return set.size() != 0;
