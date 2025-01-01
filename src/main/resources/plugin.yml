@@ -2,3 +2,7 @@ name: VItemSign
 version: '1.0-SNAPSHOT'
 main: de.varilx.vItemsign.VItemSign
 api-version: '1.21'
+
+softdepend:
+  - LuckPerms
+  - WorldGuard
