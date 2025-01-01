@@ -50,6 +50,7 @@ public final class VItemSign extends JavaPlugin {
 
     private void initializeController() {
         itemSignController = new ItemSignController();
+        if(!worldGuardHook.isEnabled()) return;
         worldGuardController = new WorldGuardController(this);
     }
 
