@@ -63,7 +63,7 @@ public class ItemSignController {
         itemBuilder.addLastLore(miniMessage.deserialize(text))
                 .addLastLore(Component.empty())
                 .addLastLore(LanguageUtils.getMessage("signed_lore",
-                        Placeholder.parsed("luckperms_prefix", prefix),
+                        Placeholder.parsed("luckperms_prefix", (prefix == null ? "" : prefix)),
                         Placeholder.parsed("username", player.getName()),
                         Placeholder.parsed("date", dateFormat.format(signDate))
                 ));
