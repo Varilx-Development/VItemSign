@@ -1,5 +1,6 @@
 package de.varilx.vItemsign;
 
+import de.tr7zw.changeme.nbtapi.NBT;
 import de.varilx.BaseAPI;
 import de.varilx.command.registry.VaxCommandRegistry;
 import de.varilx.utils.language.LanguageUtils;
@@ -18,6 +19,7 @@ public final class VItemSign extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        checkNBT();
         new BaseAPI(this, 24312).enable();
         initializeController();
         registerCommands();
@@ -38,6 +40,12 @@ public final class VItemSign extends JavaPlugin {
 
     private void initializeController() {
         itemSignController = new ItemSignController();
+    }
+
+    private void checkNBT() {
+        if(NBT.preloadApi()) return;
+        getLogger().warning("NBT-API wasn't initialized properly, disabling the plugin");
+        getServer().getPluginManager().disablePlugin(this);
     }
 
 }
