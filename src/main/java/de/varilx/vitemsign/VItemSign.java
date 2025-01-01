@@ -1,15 +1,15 @@
-package de.varilx.vItemsign;
+package de.varilx.vitemsign;
 
 import de.tr7zw.changeme.nbtapi.NBT;
 import de.varilx.BaseAPI;
 import de.varilx.command.registry.VaxCommandRegistry;
 import de.varilx.utils.language.LanguageUtils;
-import de.varilx.vItemsign.command.ItemSignCommand;
-import de.varilx.vItemsign.controller.ItemSignController;
-import de.varilx.vItemsign.controller.WorldGuardController;
-import de.varilx.vItemsign.hook.LuckPermsHook;
-import de.varilx.vItemsign.hook.WorldGuardHook;
-import de.varilx.vItemsign.listener.ItemSignListener;
+import de.varilx.vitemsign.command.ItemSignCommand;
+import de.varilx.vitemsign.controller.ItemSignController;
+import de.varilx.vitemsign.controller.WorldGuardController;
+import de.varilx.vitemsign.hook.LuckPermsHook;
+import de.varilx.vitemsign.hook.WorldGuardHook;
+import de.varilx.vitemsign.listener.ItemSignListener;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -49,7 +49,7 @@ public final class VItemSign extends JavaPlugin {
     }
 
     private void initializeController() {
-        itemSignController = new ItemSignController();
+        itemSignController = new ItemSignController(this);
         if(!worldGuardHook.isEnabled()) return;
         worldGuardController = new WorldGuardController(this);
     }

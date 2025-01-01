@@ -1,10 +1,10 @@
-package de.varilx.vItemsign.command;
+package de.varilx.vitemsign.command;
 
 
 import de.varilx.BaseAPI;
 import de.varilx.command.VaxCommand;
 import de.varilx.utils.language.LanguageUtils;
-import de.varilx.vItemsign.VItemSign;
+import de.varilx.vitemsign.VItemSign;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.bukkit.command.CommandSender;

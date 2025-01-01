@@ -1,11 +1,10 @@
-package de.varilx.vItemsign.controller;
+package de.varilx.vitemsign.controller;
 
 
 import com.sk89q.worldedit.bukkit.BukkitWorld;
 import com.sk89q.worldedit.math.BlockVector3;
-import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import de.varilx.vItemsign.VItemSign;
+import de.varilx.vitemsign.VItemSign;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.bukkit.Location;

@@ -1,4 +1,4 @@
-package de.varilx.vItemsign.utils;
+package de.varilx.vitemsign.utils;
 
 
 import org.bukkit.inventory.ItemStack;

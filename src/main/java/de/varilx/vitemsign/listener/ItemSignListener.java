@@ -1,11 +1,11 @@
-package de.varilx.vItemsign.listener;
+package de.varilx.vitemsign.listener;
 
 
 import de.tr7zw.changeme.nbtapi.NBTBlock;
 import de.tr7zw.changeme.nbtapi.NBTEntity;
 import de.varilx.utils.language.LanguageUtils;
-import de.varilx.vItemsign.VItemSign;
-import de.varilx.vItemsign.utils.ItemStackConverter;
+import de.varilx.vitemsign.VItemSign;
+import de.varilx.vitemsign.utils.ItemStackConverter;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.bukkit.entity.Player;

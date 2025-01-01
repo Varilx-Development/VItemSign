@@ -1,4 +1,4 @@
-package de.varilx.vItemsign.item;
+package de.varilx.vitemsign.item;
 
 
 import lombok.AccessLevel;

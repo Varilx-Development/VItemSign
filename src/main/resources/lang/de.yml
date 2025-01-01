@@ -16,8 +16,9 @@ item_already_signed: "<prefix><red>Dieses Item wurde bereits signiert!"
 item_signed_successfully: "<prefix>Das Item wurde <green>erfolgreich <gray>signiert"
 item_in_hand_is_air: "<prefix><red>Du musst ein Item in der Hand halten!"
 item_sign_broken_successfully: "<prefix>Du hast ein signiertes Item abgebaut!"
+lore_prefix_separator: " <dark_gray>| <gray>"
 
-signed_lore: "<dark_gray>» <gray>Signiert von <luckperms_prefix><reset> <dark_gray>| <gray><username> <gray>am <yellow><date>"
+signed_lore: "<!i><dark_gray>» <gray>Signiert von <luckperms_prefix><reset><separator><username> <gray>am <yellow><date>"
 
 Command:
   Name: "itemsign"
@@ -28,7 +29,7 @@ Command:
     Unlock: "unlock"
   Usage:
     - "<prefix>VItemSign Hilfe<dark_gray>:"
-    - "<prefix><yellow>/itemsign <dark_gray><<green>Text<dark_gray>> - <gray>Signiert ein §eItem"
+    - "<prefix><yellow>/itemsign <dark_gray><<green>Text<dark_gray>> - <gray>Signiert ein <yellow>Item"
     - "<prefix><yellow>/itemsign <red>delete <dark_gray>- <gray>Die Signatur wird <red>gelöscht"
     - "<prefix><yellow>/itemsign <red>lock <dark_gray>- <gray>Das Item wird <red>gesperrt"
     - "<prefix><yellow>/itemsign <green>unlock <dark_gray>- <gray>Das Item wird <yellow>entsperrt"

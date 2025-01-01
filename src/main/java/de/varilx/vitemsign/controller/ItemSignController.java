@@ -1,18 +1,19 @@
-package de.varilx.vItemsign.controller;
+package de.varilx.vitemsign.controller;
 
 
 import de.tr7zw.changeme.nbtapi.NBT;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import de.varilx.utils.itembuilder.ItemBuilder;
 import de.varilx.utils.language.LanguageUtils;
-import de.varilx.vItemsign.VItemSign;
-import de.varilx.vItemsign.hook.LuckPermsHook;
-import de.varilx.vItemsign.item.SignedItem;
+import de.varilx.vitemsign.VItemSign;
+import de.varilx.vitemsign.hook.LuckPermsHook;
+import de.varilx.vitemsign.item.SignedItem;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import net.luckperms.api.context.ContextSet;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.query.QueryOptions;
@@ -65,13 +66,21 @@ public class ItemSignController {
             prefix = user.getCachedData().getMetaData(QueryOptions.contextual(contexts)).getPrefix();
         }
 
+        System.out.println(PlainTextComponentSerializer.plainText().serialize(LanguageUtils.getMessage("signed_lore",
+                Placeholder.parsed("luckperms_prefix", (prefix == null ? "" : prefix)),
+                Placeholder.parsed("username", player.getName()),
+                Placeholder.parsed("date", dateFormat.format(signDate)),
+                Placeholder.parsed("separator", (prefix == null ? " " : LanguageUtils.getMessageString("lore_prefix_separator")))
+        )));
+
         ItemBuilder itemBuilder = new ItemBuilder(itemStack);
         itemBuilder.addLastLore(miniMessage.deserialize(text))
                 .addLastLore(Component.empty())
                 .addLastLore(LanguageUtils.getMessage("signed_lore",
                         Placeholder.parsed("luckperms_prefix", (prefix == null ? "" : prefix)),
                         Placeholder.parsed("username", player.getName()),
-                        Placeholder.parsed("date", dateFormat.format(signDate))
+                        Placeholder.parsed("date", dateFormat.format(signDate)),
+                        Placeholder.parsed("separator", (prefix == null ? "+" : LanguageUtils.getMessageString("lore_prefix_separator")))
                 ));
         ItemStack stack = itemBuilder.build();
 

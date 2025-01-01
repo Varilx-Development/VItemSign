@@ -1,8 +1,8 @@
-package de.varilx.vItemsign.hook;
+package de.varilx.vitemsign.hook;
 
 
 import de.varilx.hook.AbstractPluginHook;
-import de.varilx.vItemsign.VItemSign;
+import de.varilx.vitemsign.VItemSign;
 import com.sk89q.worldguard.WorldGuard;
 
 /**

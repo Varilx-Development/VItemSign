@@ -76,7 +76,7 @@ tasks {
         minecraftVersion("1.21.3")
 
         downloadPlugins {
-            url("https://download.luckperms.net/1568/bukkit/loader/LuckPerms-Bukkit-5.4.151.jar")
+            //url("https://download.luckperms.net/1568/bukkit/loader/LuckPerms-Bukkit-5.4.151.jar")
         }
     }
 }
