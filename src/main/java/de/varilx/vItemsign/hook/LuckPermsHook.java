@@ -1,8 +1,9 @@
-package de.varilx.vItemsign.hook.hooks;
+package de.varilx.vItemsign.hook;
 
 
+import de.varilx.hook.AbstractPluginHook;
 import de.varilx.vItemsign.VItemSign;
-import de.varilx.vItemsign.hook.AbstractPluginHook;
+import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 
 /**
@@ -12,7 +13,7 @@ import net.luckperms.api.LuckPermsProvider;
  * Author: ShadowDev1929
  * Created on: 01.01.2025
  */
-public class LuckPermsHook extends AbstractPluginHook {
+public class LuckPermsHook extends AbstractPluginHook<LuckPerms> {
 
     public LuckPermsHook(VItemSign plugin, String hookPluginName) {
         super(plugin, hookPluginName);
@@ -24,6 +25,6 @@ public class LuckPermsHook extends AbstractPluginHook {
             plugin.getLogger().warning("Plugin " + hookPluginName + " could not be found! Skipping hooking...");
             return;
         }
-        hookInstance = LuckPermsProvider.get();
+        hookedPlugin = LuckPermsProvider.get();
     }
 }

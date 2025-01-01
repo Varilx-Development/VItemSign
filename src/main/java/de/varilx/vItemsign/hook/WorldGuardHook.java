@@ -1,8 +1,8 @@
-package de.varilx.vItemsign.hook.hooks;
+package de.varilx.vItemsign.hook;
 
 
+import de.varilx.hook.AbstractPluginHook;
 import de.varilx.vItemsign.VItemSign;
-import de.varilx.vItemsign.hook.AbstractPluginHook;
 import com.sk89q.worldguard.WorldGuard;
 
 /**
@@ -22,10 +22,9 @@ public class WorldGuardHook extends AbstractPluginHook<WorldGuard> {
     public void check() {
         if(plugin.getServer().getPluginManager().getPlugin(hookPluginName) == null) {
             plugin.getLogger().info(hookPluginName + "could not be found! Please install it to use this plugin!");
-            plugin.getServer().getPluginManager().disablePlugin(plugin);
             return;
         }
 
-        hookInstance = WorldGuard.getInstance();
+        hookedPlugin = WorldGuard.getInstance();
     }
 }
