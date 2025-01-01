@@ -58,7 +58,7 @@ public class ItemSignController {
     public ItemStack signItem(Player player, ItemStack itemStack, String text) {
         long signDate = System.currentTimeMillis();
 
-        String prefix = "";
+        String prefix = null;
 
         if(luckPermsHook.isEnabled()) {
             User user = luckPermsHook.getHookedPlugin().getUserManager().getUser(player.getUniqueId());
@@ -80,7 +80,7 @@ public class ItemSignController {
                         Placeholder.parsed("luckperms_prefix", (prefix == null ? "" : prefix)),
                         Placeholder.parsed("username", player.getName()),
                         Placeholder.parsed("date", dateFormat.format(signDate)),
-                        Placeholder.parsed("separator", (prefix == null ? "+" : LanguageUtils.getMessageString("lore_prefix_separator")))
+                        Placeholder.parsed("separator", (prefix == null ? "" : LanguageUtils.getMessageString("lore_prefix_separator")))
                 ));
         ItemStack stack = itemBuilder.build();
 
