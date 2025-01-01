@@ -1,0 +1,4 @@
+# General Messages
+prefix: "<bold><dark_gray>[<gradient:#5FE2C5:#4498DB>VItem</gradient><gradient:#4498DB:#89B974>Si</gradient><gradient:#89B974:#89B974>gn</gradient><dark_gray>]<reset><gray> "
+user_not_found: "<prefix><red>Dieser Nutzer existiert nicht."
+no_permission: "<prefix><red>Dir fehlen die Rechte dies zu tun!"
