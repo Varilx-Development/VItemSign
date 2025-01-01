@@ -6,6 +6,8 @@ import de.varilx.command.registry.VaxCommandRegistry;
 import de.varilx.utils.language.LanguageUtils;
 import de.varilx.vItemsign.command.ItemSignCommand;
 import de.varilx.vItemsign.controller.ItemSignController;
+import de.varilx.vItemsign.hook.hooks.LuckPermsHook;
+import de.varilx.vItemsign.hook.hooks.WorldGuardHook;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -15,11 +17,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public final class VItemSign extends JavaPlugin {
 
+    LuckPermsHook luckPermsHook;
+    WorldGuardHook worldGuardHook;
+
     ItemSignController itemSignController;
 
     @Override
     public void onEnable() {
         checkNBT();
+        checkHooks();
         new BaseAPI(this, 24312).enable();
         initializeController();
         registerCommands();
@@ -46,6 +52,19 @@ public final class VItemSign extends JavaPlugin {
         if(NBT.preloadApi()) return;
         getLogger().warning("NBT-API wasn't initialized properly, disabling the plugin");
         getServer().getPluginManager().disablePlugin(this);
+    }
+
+    private void checkHooks() {
+        luckPermsHook = new LuckPermsHook(this, "LuckPerms");
+        luckPermsHook.check();
+
+        System.out.println(worldGuardHook.isEnabled());
+
+        worldGuardHook = new WorldGuardHook(this, "WorldGuard");
+        worldGuardHook.check();
+
+        System.out.println(worldGuardHook.isEnabled());
+
     }
 
 }
