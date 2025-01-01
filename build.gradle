@@ -32,6 +32,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.36")
     implementation("de.varilx:base-api:0.4.2")
     implementation("de.tr7zw:item-nbt-api:2.14.1")
+    compileOnly ("net.luckperms:api:5.4")
 
     annotationProcessor("org.projectlombok:lombok:1.18.36")
     testImplementation("org.projectlombok:lombok:1.18.36")
