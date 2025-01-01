@@ -21,7 +21,7 @@ public class WorldGuardHook extends AbstractPluginHook<WorldGuard> {
     @Override
     public void check() {
         if(plugin.getServer().getPluginManager().getPlugin(hookPluginName) == null) {
-            plugin.getLogger().info(hookPluginName + "could not be found! Please install it to use this plugin!");
+            plugin.getLogger().info(hookPluginName + " could not be found! Please install it to use this plugin!");
             return;
         }
 
