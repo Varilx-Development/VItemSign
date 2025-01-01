@@ -38,9 +38,11 @@ public class ItemSignListener implements Listener {
     @EventHandler
     public void onSpawn(HangingPlaceEvent event) {
         Player player = event.getPlayer();
-        if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
-            event.setCancelled(true);
-            return;
+        if(plugin.getWorldGuardController() != null) {
+            if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
+                event.setCancelled(true);
+                return;
+            }
         }
         if(plugin.getItemSignController().isSigned(player.getEquipment().getItemInMainHand())) {
             ItemStack inHand = player.getEquipment().getItemInMainHand();
@@ -55,9 +57,11 @@ public class ItemSignListener implements Listener {
 
     @EventHandler
     public void onBreak(HangingBreakByEntityEvent event) {
-        if (plugin.getWorldGuardController().isWorldGuardRegion(event.getEntity().getLocation())) {
-            event.setCancelled(true);
-            return;
+        if(plugin.getWorldGuardController() != null) {
+            if (plugin.getWorldGuardController().isWorldGuardRegion(event.getEntity().getLocation())) {
+                event.setCancelled(true);
+                return;
+            }
         }
         if(event.getRemover() instanceof Player player) {
             NBTEntity entity = new NBTEntity(event.getEntity());
@@ -77,9 +81,11 @@ public class ItemSignListener implements Listener {
 
     @EventHandler
     public void onPlace(BlockPlaceEvent event) {
-        if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
-            event.setCancelled(true);
-            return;
+        if(plugin.getWorldGuardController() != null) {
+            if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
+                event.setCancelled(true);
+                return;
+            }
         }
         if(plugin.getItemSignController().isSigned(event.getItemInHand())) {
             ItemStack inHand = event.getItemInHand();
@@ -95,9 +101,11 @@ public class ItemSignListener implements Listener {
 
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
-        if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
-            event.setCancelled(true);
-            return;
+        if(plugin.getWorldGuardController() != null) {
+            if (plugin.getWorldGuardController().isWorldGuardRegion(event.getBlock().getLocation())) {
+                event.setCancelled(true);
+                return;
+            }
         }
         Player player = event.getPlayer();
         NBTBlock nbtBlock = new NBTBlock(event.getBlock());
