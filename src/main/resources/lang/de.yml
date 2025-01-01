@@ -15,6 +15,7 @@ item_unlocked_successfully: "<prefix>Das Item wurde <green>erfolgreich entsperrt
 item_already_signed: "<prefix><red>Dieses Item wurde bereits signiert!"
 item_signed_successfully: "<prefix>Das Item wurde <green>erfolgreich <gray>signiert"
 item_in_hand_is_air: "<prefix><red>Du musst ein Item in der Hand halten!"
+item_sign_broken_successfully: "<prefix>Du hast ein signiertes Item abgebaut!"
 
 signed_lore: "<dark_gray>» <gray>Signiert von <luckperms_prefix><reset> <dark_gray>| <gray><username> <gray>am <yellow><date>"
 
