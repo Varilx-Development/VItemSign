@@ -5,14 +5,14 @@ import de.tr7zw.changeme.nbtapi.NBT;
 import de.tr7zw.changeme.nbtapi.NBTItem;
 import de.varilx.utils.itembuilder.ItemBuilder;
 import de.varilx.utils.language.LanguageUtils;
+import de.varilx.vItemsign.VItemSign;
+import de.varilx.vItemsign.hook.LuckPermsHook;
 import de.varilx.vItemsign.item.SignedItem;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
-import net.luckperms.api.LuckPerms;
-import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.context.ContextSet;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.query.QueryOptions;
@@ -34,12 +34,14 @@ import java.util.UUID;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ItemSignController {
 
-    LuckPerms luckPerms;
+    VItemSign plugin;
+    LuckPermsHook luckPermsHook;
     DateFormat dateFormat;
     MiniMessage miniMessage;
 
-    public ItemSignController() {
-        this.luckPerms = LuckPermsProvider.get();
+    public ItemSignController(VItemSign plugin) {
+        this.plugin = plugin;
+        luckPermsHook = plugin.getLuckPermsHook();
         this.dateFormat = new SimpleDateFormat(LanguageUtils.getMessageString("date_format"));
         this.miniMessage = MiniMessage.miniMessage();
     }
@@ -55,9 +57,13 @@ public class ItemSignController {
     public ItemStack signItem(Player player, ItemStack itemStack, String text) {
         long signDate = System.currentTimeMillis();
 
-        User user = luckPerms.getUserManager().getUser(player.getUniqueId());
-        ContextSet contexts = luckPerms.getContextManager().getContext(user).orElse(null);
-        String prefix = user.getCachedData().getMetaData(QueryOptions.contextual(contexts)).getPrefix();;
+        String prefix = "";
+
+        if(luckPermsHook.isEnabled()) {
+            User user = luckPermsHook.getHookedPlugin().getUserManager().getUser(player.getUniqueId());
+            ContextSet contexts = luckPermsHook.getHookedPlugin().getContextManager().getContext(user).orElse(null);
+            prefix = user.getCachedData().getMetaData(QueryOptions.contextual(contexts)).getPrefix();
+        }
 
         ItemBuilder itemBuilder = new ItemBuilder(itemStack);
         itemBuilder.addLastLore(miniMessage.deserialize(text))
