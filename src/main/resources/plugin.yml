@@ -1,4 +1,4 @@
 name: VItemSign
-version: '1.0-SNAPSHOT'
+version: '${version}'
 main: de.varilx.vItemsign.VItemSign
 api-version: '1.21'
