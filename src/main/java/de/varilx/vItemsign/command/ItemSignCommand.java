@@ -158,7 +158,11 @@ public class ItemSignCommand extends VaxCommand {
 
     @Override
     public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {
-        return List.of("delete", "lock", "unlock");
+        return List.of(
+                LanguageUtils.getMessageString("Command.Arguments.Delete"),
+                LanguageUtils.getMessageString("Command.Arguments.Lock"),
+                LanguageUtils.getMessageString("Command.Arguments.Unlock")
+        );
     }
 
     private boolean isBlocked(ItemStack itemStack) {
