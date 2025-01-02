@@ -1,0 +1,35 @@
+# General Messages
+prefix: "<bold><dark_gray>[<gradient:#5FE2C5:#4498DB>VItem</gradient><gradient:#4498DB:#89B974>Si</gradient><gradient:#89B974:#89B974>gn</gradient><dark_gray>]<reset><gray> "
+date_format: "MM/dd/yyyy HH:mm"
+user_not_found: "<prefix><red>This user does not exist."
+no_permission: "<prefix><red>You do not have permission to do this!"
+cannot_sign_blocked_item: "<prefix><red>You are not allowed to sign this item!"
+cannot_lock_blocked_item: "<prefix><red>You are not allowed to lock this item!"
+item_not_signed: "<prefix><red>This item is not signed!"
+not_your_item: "<prefix><red>You are not the owner of this item!"
+item_sign_deleted_successfully: "<prefix>The signature was <green>successfully <red>deleted<gray>!"
+item_already_locked: "<prefix><red>This item has already been locked!"
+item_locked_successfully: "<prefix>The item was <green>successfully <red>locked<gray>!"
+item_not_locked: "<prefix><red>This item is not locked!"
+item_unlocked_successfully: "<prefix>The item was <green>successfully unlocked<gray>!"
+item_already_signed: "<prefix><red>This item has already been signed!"
+item_signed_successfully: "<prefix>The item was <green>successfully <gray>signed"
+item_in_hand_is_air: "<prefix><red>You must hold an item in your hand!"
+item_sign_broken_successfully: "<prefix>You broke a signed item!"
+lore_prefix_separator: " <dark_gray>| <gray>"
+
+signed_lore: "<!i><dark_gray>» <gray>Signed by <luckperms_prefix><reset><separator><username> <gray>on <yellow><date>"
+
+Command:
+  Name: "itemsign"
+  Permission: "vitemsign.use"
+  Arguments:
+    Delete: "delete"
+    Lock: "lock"
+    Unlock: "unlock"
+  Usage:
+    - "<prefix>VItemSign Help<dark_gray>:"
+    - "<prefix><yellow>/itemsign <dark_gray><<green>Text<dark_gray>> - <gray>Signs an <yellow>item"
+    - "<prefix><yellow>/itemsign <red>delete <dark_gray>- <gray>The signature will be <red>deleted"
+    - "<prefix><yellow>/itemsign <red>lock <dark_gray>- <gray>The item will be <red>locked"
+    - "<prefix><yellow>/itemsign <green>unlock <dark_gray>- <gray>The item will be <yellow>unlocked"
