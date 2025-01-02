@@ -25,13 +25,19 @@ repositories {
         name = "CodeMC"
         url = uri("https://repo.codemc.io/repository/maven-public/")
     }
+    maven {
+        name = "EngineHub"
+        url =  uri("https://maven.enginehub.org/repo/")
+    }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:${paper_version}")
     compileOnly("org.projectlombok:lombok:1.18.36")
-    implementation("de.varilx:base-api:0.4.2")
+    implementation("de.varilx:base-api:0.4.4")
     implementation("de.tr7zw:item-nbt-api:2.14.1")
+    compileOnly ("net.luckperms:api:5.4")
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.0")
 
     annotationProcessor("org.projectlombok:lombok:1.18.36")
     testImplementation("org.projectlombok:lombok:1.18.36")
@@ -68,6 +74,10 @@ processResources {
 tasks {
     runServer {
         minecraftVersion("1.21.3")
+
+        downloadPlugins {
+            //url("https://download.luckperms.net/1568/bukkit/loader/LuckPerms-Bukkit-5.4.151.jar")
+        }
     }
 }
 
@@ -81,4 +91,5 @@ shadowJar {
     exclude("org/bson/**")
     exclude("net/bytebuddy/**")
     exclude("jakarta/**")
+    relocate("de.tr7zw.changeme.nbtapi", "de.tr7zw.varilxrelocated.nbtapi")
 }

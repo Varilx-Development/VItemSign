@@ -1,4 +1,35 @@
 # General Messages
 prefix: "<bold><dark_gray>[<gradient:#5FE2C5:#4498DB>VItem</gradient><gradient:#4498DB:#89B974>Si</gradient><gradient:#89B974:#89B974>gn</gradient><dark_gray>]<reset><gray> "
+date_format: "dd.MM.yyyy HH:mm"
 user_not_found: "<prefix><red>Dieser Nutzer existiert nicht."
 no_permission: "<prefix><red>Dir fehlen die Rechte dies zu tun!"
+cannot_sign_blocked_item: "<prefix><red>Du darfst dieses Item nicht signieren!"
+cannot_lock_blocked_item: "<prefix><red>Du darfst dieses Item nicht sperren!"
+item_not_signed: "<prefix><red>Dieses Item ist nicht signiert!"
+not_your_item: "<prefix><red>Du bist nicht der Besitzer dieses Items!"
+item_sign_deleted_successfully: "<prefix>Die Signatur wurde <green>erfolgreich <red>gelöscht<gray>!"
+item_already_locked: "<prefix><red>Dieses Item wurde bereits gesperrt!"
+item_locked_successfully: "<prefix>Das Item wurde <green>erfolgreich <red>gesperrt<gray>!"
+item_not_locked: "<prefix><red>Dieses Item ist nicht gesperrt!"
+item_unlocked_successfully: "<prefix>Das Item wurde <green>erfolgreich entsperrt<gray>!"
+item_already_signed: "<prefix><red>Dieses Item wurde bereits signiert!"
+item_signed_successfully: "<prefix>Das Item wurde <green>erfolgreich <gray>signiert"
+item_in_hand_is_air: "<prefix><red>Du musst ein Item in der Hand halten!"
+item_sign_broken_successfully: "<prefix>Du hast ein signiertes Item abgebaut!"
+lore_prefix_separator: " <dark_gray>| <gray>"
+
+signed_lore: "<!i><dark_gray>» <gray>Signiert von <luckperms_prefix><reset><separator><username> <gray>am <yellow><date>"
+
+Command:
+  Name: "itemsign"
+  Permission: "vitemsign.use"
+  Arguments:
+    Delete: "delete"
+    Lock: "lock"
+    Unlock: "unlock"
+  Usage:
+    - "<prefix>VItemSign Hilfe<dark_gray>:"
+    - "<prefix><yellow>/itemsign <dark_gray><<green>Text<dark_gray>> - <gray>Signiert ein <yellow>Item"
+    - "<prefix><yellow>/itemsign <red>delete <dark_gray>- <gray>Die Signatur wird <red>gelöscht"
+    - "<prefix><yellow>/itemsign <red>lock <dark_gray>- <gray>Das Item wird <red>gesperrt"
+    - "<prefix><yellow>/itemsign <green>unlock <dark_gray>- <gray>Das Item wird <yellow>entsperrt"
