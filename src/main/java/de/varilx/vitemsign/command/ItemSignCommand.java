@@ -166,7 +166,7 @@ public class ItemSignCommand extends VaxCommand {
     }
 
     private boolean isBlocked(ItemStack itemStack) {
-        return BaseAPI.getBaseAPI().getConfiguration().getConfig().getStringList("BlockedItems").contains(itemStack.getType().name());
+        return BaseAPI.get().getConfiguration().getStringList("BlockedItems").contains(itemStack.getType().name());
     }
 
 }

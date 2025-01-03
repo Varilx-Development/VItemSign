@@ -1,7 +1,7 @@
 package de.varilx.vitemsign;
 
 import de.tr7zw.changeme.nbtapi.NBT;
-import de.varilx.BaseAPI;
+import de.varilx.BaseSpigotAPI;
 import de.varilx.command.registry.VaxCommandRegistry;
 import de.varilx.utils.language.LanguageUtils;
 import de.varilx.vitemsign.command.ItemSignCommand;
@@ -29,7 +29,7 @@ public final class VItemSign extends JavaPlugin {
     public void onEnable() {
         checkNBT();
         checkHooks();
-        new BaseAPI(this, 24312).enable();
+        new BaseSpigotAPI(this, 24312).enable();
         initializeController();
         registerCommands();
         registerListeners();
