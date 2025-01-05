@@ -34,7 +34,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:${paper_version}")
     compileOnly("org.projectlombok:lombok:1.18.36")
-    implementation("de.varilx:base-api:1.0.2")
+    implementation("de.varilx:base-api:1.1.0")
     implementation("de.tr7zw:item-nbt-api:2.14.1")
     compileOnly ("net.luckperms:api:5.4")
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.12")
