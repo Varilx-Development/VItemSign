@@ -158,6 +158,11 @@ SQL:
 * VaultAPI
 ---
 
+---
+## Soft Requirements
+* WorldGuard
+---
+
 
 
 ## Notes
