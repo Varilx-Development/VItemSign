@@ -1,43 +1,38 @@
-![v-economy](https://github.com/user-attachments/assets/e9496257-71d4-4862-851d-9290630931e9)
+![v-ITEMSIGN](https://github.com/user-attachments/assets/1649e7c2-b67a-4bf1-8555-777f4fb893bd)
 
 ![Discord](https://img.shields.io/discord/1322873747535040512)
-![Build Status](https://img.shields.io/github/actions/workflow/status/Varilx-Development/VDiscordIntegration/build.yml?branch=main)
-![Release](https://img.shields.io/github/v/release/Varilx-Development/VDiscordIntegration)
+![Build Status](https://img.shields.io/github/actions/workflow/status/Varilx-Development/VItemSign/build.yml?branch=main)
+![Release](https://img.shields.io/github/v/release/Varilx-Development/VItemSign)
 
 <p align="center">
-    <a href="https://modrinth.com/plugin/veconomy">
+    <a href="https://modrinth.com/plugin/vitemsign">
         <img src="https://raw.githubusercontent.com/vLuckyyy/badges/main/avaiable-on-modrinth.svg" alt="Available on Modrinth" />
     </a>
 </p>
 
 # VItemSign Configuration
 
-Description
-
----
+Vitemsign is a signing system for items, allowing you to sign and protect them.
 
 # Preview
 
-### Money Leaderboard
-![Leaderboard](https://cdn.varilx.de/u/bbd7c212-42bf-40a3-8867-c80d288f8d91.png)
+### Commands
+![Commands](https://cdn.varilx.de/u/NVIDIA_Overlay_AqL8tHS7OH.png)
 
 ## Configuration Overview
 
-### 1. **Database**
-No database needed
-
-### 2. **Custom Messages**
+### **Custom Messages**
 Customize messages for server startup, player join/quit, and Discord chat using the MiniMessage format.
 We currently support: `de` and `en`
 
-### 3. **Commands**
+### **Commands**
 `/itemsign <Message>` - Signs the item with the specified text
 
-`/itemsign lock` - 
+`/itemsign lock` - Locks the signed item so that it cannot be changed.
 
-`/itemsign unlock` -
+`/itemsign unlock` - Unlocks the signed item so that it can be changed again.
 
-`/itemsign lock` - 
+`/itemsign delete` - Removes the sign from the item.
 
 
 ### 4. **Permissions** 
@@ -151,11 +146,6 @@ SQL:
 ```
 
 
----
-
----
-## Requirements
-* VaultAPI
 ---
 
 ---
