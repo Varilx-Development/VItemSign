@@ -12,9 +12,7 @@
 
 # VItemSign Configuration
 
-Description
-
----
+Vitemsign is a signing system for items, allowing you to sign and protect them.
 
 # Preview
 
@@ -23,21 +21,18 @@ Description
 
 ## Configuration Overview
 
-### 1. **Database**
-No database needed
-
-### 2. **Custom Messages**
+### **Custom Messages**
 Customize messages for server startup, player join/quit, and Discord chat using the MiniMessage format.
 We currently support: `de` and `en`
 
-### 3. **Commands**
+### **Commands**
 `/itemsign <Message>` - Signs the item with the specified text
 
-`/itemsign lock` - 
+`/itemsign lock` - Locks the signed item so that it cannot be changed.
 
-`/itemsign unlock` -
+`/itemsign unlock` - Unlocks the signed item so that it can be changed again.
 
-`/itemsign lock` - 
+`/itemsign delete` - Removes the sign from the item.
 
 
 ### 4. **Permissions** 
@@ -151,11 +146,6 @@ SQL:
 ```
 
 
----
-
----
-## Requirements
-* VaultAPI
 ---
 
 ---
