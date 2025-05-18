@@ -29,7 +29,7 @@ public class VItemSignLoader implements PluginLoader {
         resolver.addRepository(new RemoteRepository.Builder("sonatype-public", "default", "https://oss.sonatype.org/content/groups/public/").build());
         resolver.addRepository(new RemoteRepository.Builder("varilx-development", "default", "https://reposilite.varilx.de/Varilx").build());
 
-        resolver.addDependency(new Dependency(new DefaultArtifact("de.varilx:base-api:1.3.2"), null));
+        resolver.addDependency(new Dependency(new DefaultArtifact("de.varilx:base-api:1.3.3"), null));
 
         classpathBuilder.addLibrary(resolver);
     }
