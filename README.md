@@ -17,7 +17,8 @@ Vitemsign is a signing system for items, allowing you to sign and protect them.
 # Preview
 
 ### Commands
-![Commands](https://cdn.varilx.de/u/NVIDIA_Overlay_AqL8tHS7OH.png)
+![Commands](https://cdn.varilx.de/raw/Jox6cV.png)
+
 
 ## Configuration Overview
 
