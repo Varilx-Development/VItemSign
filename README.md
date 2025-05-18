@@ -1,4 +1,4 @@
-![v-ITEMSIGN](https://github.com/user-attachments/assets/1649e7c2-b67a-4bf1-8555-777f4fb893bd)
+![varilxitemsign](https://cdn.modrinth.com/data/cached_images/53be9abc933500b97eda2771459cf73760ff2cc2_0.webp)
 
 ![Discord](https://img.shields.io/discord/1322873747535040512)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/Varilx-Development/VItemSign/build.yml?branch=main)
@@ -160,6 +160,6 @@ SQL:
 - The MiniMessage format is highly flexible for styling and formatting messages. Refer to the [MiniMessage documentation](https://docs.advntr.dev/minimessage/format.html) for more details.
 - SQLite is the simplest database option as it doesn’t require additional setup.
 
-<a href="https://discord.gg/ZPyb9g6Gs4">
-    <img src="https://github.com/user-attachments/assets/e2c942ae-d79a-4606-b4b0-240fd92c9a90" alt="Join our Discord for help" width="400">
-</a>
+
+Join our Discord for support, updates, or to report bugs:
+<p align="center"> <a href="https://discord.gg/ZPyb9g6Gs4"> <img src="https://cdn.varilx.de/raw/Zm9inS.png" alt="Join our Discord" width="400"> </a> </p>
