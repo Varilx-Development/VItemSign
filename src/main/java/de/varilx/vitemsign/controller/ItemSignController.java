@@ -66,12 +66,7 @@ public class ItemSignController {
             prefix = user.getCachedData().getMetaData(QueryOptions.contextual(contexts)).getPrefix();
         }
 
-        System.out.println(PlainTextComponentSerializer.plainText().serialize(LanguageUtils.getMessage("signed_lore",
-                Placeholder.parsed("luckperms_prefix", (prefix == null ? "" : prefix)),
-                Placeholder.parsed("username", player.getName()),
-                Placeholder.parsed("date", dateFormat.format(signDate)),
-                Placeholder.parsed("separator", (prefix == null ? " " : LanguageUtils.getMessageString("lore_prefix_separator")))
-        )));
+
 
         ItemBuilder itemBuilder = new ItemBuilder(itemStack);
         itemBuilder.addLastLore(miniMessage.deserialize(text))

@@ -1,9 +1,0 @@
-name: VItemSign
-version: '${version}'
-main: de.varilx.vitemsign.VItemSign
-api-version: '1.21'
-author: ShadowDev1929
-
-softdepend:
-  - LuckPerms
-  - WorldGuard
