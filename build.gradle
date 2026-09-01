@@ -33,15 +33,15 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:${paper_version}")
-    compileOnly("org.projectlombok:lombok:1.18.38")
+    compileOnly("org.projectlombok:lombok:1.18.48")
     compileOnly("de.varilx:base-api:1.3.3")
     implementation("de.tr7zw:item-nbt-api:2.15.0")
     compileOnly ("net.luckperms:api:5.4")
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.13")
 
-    annotationProcessor("org.projectlombok:lombok:1.18.38")
-    testImplementation("org.projectlombok:lombok:1.18.38")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok:1.18.48")
+    testImplementation("org.projectlombok:lombok:1.18.48")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.48")
 }
 
 def targetJavaVersion = 21
